@@ -103,8 +103,14 @@ SITE = Site(
         "Your donation keeps them alive."
     ),
     bio=(
-        "I'm Rana, a self-taught developer from India. I build Telegram bots and websites "
-        "and put them online for anyone to use. "
+        "👨‍💻 Hey, I'm Rana Universe — a self-appointed Python backend developer "
+        "from my own little universe 🌌😂\n\n"
+        "🤖 I build Telegram automation bots, websites, and useful tools "
+        "to make human life a little easier (and maybe save a few clicks). 🪄\n\n"
+        "🌍 I believe in free, open-source projects that anyone can use. "
+        "No paywalls, just code and chaos. 💻✨\n\n"
+        "💸 The code is free. The servers? Not so much. 🥲 "
+        "If you like what I build, help keep my tiny digital universe alive! 🚀❤️"
     ),
 )
 
