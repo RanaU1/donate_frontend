@@ -27,8 +27,19 @@ ROOT = Path(__file__).parent
 SRC = ROOT / "src"
 OUT = ROOT / "docs"  # GitHub Pages serves this folder
 
-CSS_ORDER = ["base", "hero", "sections", "free", "donate"]  # concatenated in this order
-JS_ORDER = ["copy", "main"]
+CSS_ORDER = [
+    "typing",
+    "base",
+    "hero",
+    "sections",
+    "free",
+    "donate",
+]  # concatenated in this order
+JS_ORDER = [
+    "typing",
+    "copy",
+    "main",
+]
 
 
 def read_parts(folder: str, names: list[str], ext: str) -> str:

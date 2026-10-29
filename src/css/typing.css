@@ -1,0 +1,35 @@
+/* Reusable typewriter effect */
+.typing {
+    display: inline;
+    white-space: pre-wrap;
+}
+
+/* Blinking cursor */
+.typing::after {
+    content: "";
+    display: inline-block;
+    width: 2px;
+    height: 0.9em;
+    margin-left: 4px;
+    vertical-align: -0.05em;
+    background: var(--sky);
+    animation: typing-cursor 0.8s steps(1) infinite;
+}
+
+.typing.typing-done::after {
+    animation: typing-cursor 0.8s steps(1) 3;
+    animation-fill-mode: forwards;
+}
+
+@keyframes typing-cursor {
+    50% {
+        opacity: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .typing::after {
+        animation: none;
+        opacity: 1;
+    }
+}
