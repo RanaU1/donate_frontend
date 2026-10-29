@@ -159,7 +159,7 @@ PROJECTS = [
 ]
 
 GOAL = Goal(
-    show=False,
+    show=True,
+    raised=50,
     monthly_cost=3000,
-    raised=0,
 )
