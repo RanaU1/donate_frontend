@@ -15,6 +15,7 @@ import shutil
 
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
+import rcssmin  # type: ignore
 
 
 import config
@@ -26,7 +27,7 @@ ROOT = Path(__file__).parent
 SRC = ROOT / "src"
 OUT = ROOT / "docs"  # GitHub Pages serves this folder
 
-CSS_ORDER = ["base", "hero", "sections", "donate"]  # concatenated in this order
+CSS_ORDER = ["base", "hero", "sections", "free", "donate"]  # concatenated in this order
 JS_ORDER = ["copy", "main"]
 
 
@@ -35,10 +36,7 @@ def read_parts(folder: str, names: list[str], ext: str) -> str:
 
 
 def minify_css(css: str) -> str:
-    # css = re.sub(r"/\*.*?\*/", "", css, flags=re.S)
-    # css = re.sub(r"\s+", " ", css)
-    # return re.sub(r"\s*([{}:;,>])\s*", r"\1", css).strip()
-    return css
+    return rcssmin.cssmin(css)  # type: ignore
 
 
 def main() -> None:

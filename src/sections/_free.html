@@ -1,15 +1,63 @@
-<section class="section" id="free">
+<section class="section free-section" id="free">
   <div class="wrap">
-    <h2>What I give away for free</h2>
-    <p class="sub">Built and hosted by me, open to everyone.</p>
-    <div class="cards">
+
+    <div class="free-heading">
+      <span class="free-eyebrow">
+        <span class="free-eyebrow-dot"></span>
+        MADE WITH CARE · FREE FOR EVERYONE
+      </span>
+
+      <h2>Things I've built for you<span class="free-period">.</span></h2>
+
+      <p class="free-sub">
+        Useful bots, creative tools, and websites.
+        Built independently and shared with everyone.
+      </p>
+    </div>
+
+    <div class="free-grid">
       {% for p in projects %}
-      <{{ 'a' if p.url else 'div' }} class="card c{{ loop.index0 % 4 }}"{% if p.url %} href="{{ p.url }}" target="_blank" rel="noopener"{% endif %}>
-        <span class="ico">{{ p.icon }}</span>
-        <h3>{{ p.title }}</h3>
-        <p>{{ p.text }}</p>
-      </{{ 'a' if p.url else 'div' }}>
+      <a class="project-card project-card-{{ loop.index0 % 4 }}" href="{{ p.url }}" target="_blank"
+        rel="noopener noreferrer">
+        <span class="project-glow" aria-hidden="true"></span>
+
+        <div class="project-top">
+          <span class="project-icon" aria-hidden="true">
+            {{ p.icon }}
+          </span>
+
+          <span class="project-open" aria-hidden="true">↗</span>
+        </div>
+
+        <div class="project-content">
+          <span class="project-label">
+            {% if loop.index0 == 0 %}
+            AUTOMATION
+            {% elif loop.index0 == 1 %}
+            MUSIC &amp; DOWNLOADS
+            {% else %}
+            WEB DEVELOPMENT
+            {% endif %}
+          </span>
+
+          <h3>{{ p.title }}</h3>
+
+          <p>{{ p.text }}</p>
+        </div>
+
+        <div class="project-footer">
+          <span>Explore project</span>
+          <span class="project-line" aria-hidden="true"></span>
+          <span class="project-arrow" aria-hidden="true">→</span>
+        </div>
+      </a>
       {% endfor %}
     </div>
+
+    <div class="free-footer-note">
+      <span aria-hidden="true">💙</span>
+      <p>Free to use. Made possible by your support.</p>
+    </div>
+
   </div>
 </section>
