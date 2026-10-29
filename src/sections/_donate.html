@@ -1,0 +1,54 @@
+{% macro row(label, value) -%}
+<div class="row"><span class="k">{{ label }}</span><span class="v">{{ value }}</span>
+  <button class="copy" type="button" data-copy="{{ value }}" data-label="{{ label }}"
+    aria-label="Copy {{ label }}">Copy</button>
+</div>
+{%- endmacro %}
+<section class="section" id="donate">
+  <div class="wrap">
+    <h2>Donate in the way that suits you</h2>
+    <p class="sub">Any amount is welcome. Thank you for caring about free tools.</p>
+    <div class="pay-grid">
+
+      <article class="pay p-upi">
+        <h3>UPI (India)</h3>
+        <p>Pay from any UPI app with zero fees.</p>
+        {{ row("UPI ID", upi.id) }}
+        <a class="btn btn-primary full" href="{{ upi.link }}">Open my UPI app</a>
+        <p class="hint">The button works on phones. On a computer, scan the QR code or copy the UPI ID.</p>
+        <div class="qr">
+          <div class="qr">
+            {% if upi_qr %}
+            <img src="{{ upi_qr }}" alt="UPI payment QR code">
+            {% else %}
+            <span>QR image unavailable</span>
+            {% endif %}
+          </div>
+        </div>
+      </article>
+
+      <article class="pay p-rzp">
+        <h3>Razorpay</h3>
+        <p>Pay by card, net banking, wallet or UPI on Razorpay's secure page.</p>
+        <a class="btn btn-primary full" href="{{ links.razorpay }}" target="_blank" rel="noopener">Donate with
+          Razorpay</a>
+      </article>
+
+      <article class="pay p-bank">
+        <h3>Bank transfer (India)</h3>
+        <p>Send directly with NEFT, IMPS or RTGS.</p>
+        {% for k, v in bank.rows() %}{{ row(k, v) }}{% endfor %}
+      </article>
+
+
+      <article class="pay p-pp">
+        <h3>PayPal (outside India)</h3>
+        <p>Donate in your own currency from anywhere.</p>
+        <a class="btn btn-primary full" href="{{ links.paypal }}" target="_blank" rel="noopener">Donate with PayPal</a>
+      </article>
+
+    </div>
+    <p class="fine">Please check the account name in your payment app before you confirm. Donations are voluntary gifts,
+      so refunds usually aren't possible.</p>
+  </div>
+</section>

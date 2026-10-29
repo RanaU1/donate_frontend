@@ -1,0 +1,23 @@
+<section class="section soft" id="about">
+  <div class="wrap about">
+    <div class="about-photo">
+      {% if photo %}
+      <img src="{{ photo }}" alt="About Rana">
+      {% else %}
+      <span>Photo unavailable</span>
+      {% endif %}
+    </div>
+    <div>
+      <h2>About me</h2>
+      <p>{{ site.bio }}</p>
+      <p><a class="plain" href="{{ links.portfolio }}" target="_blank" rel="noopener">See my portfolio</a></p>
+      <div class="socials">
+        <a class="soc s-tg" href="{{ links.telegram }}" target="_blank" rel="noopener">Telegram</a>
+        <a class="soc s-fb" href="{{ links.facebook }}" target="_blank" rel="noopener">Facebook</a>
+        <a class="soc s-yt" href="{{ links.youtube }}" target="_blank" rel="noopener">YouTube</a>
+        <a class="soc s-wa" href="{{ links.whatsapp }}" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="soc s-em" href="mailto:{{ links.email }}">Email</a>
+      </div>
+    </div>
+  </div>
+</section>

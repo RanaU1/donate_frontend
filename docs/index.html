@@ -1,0 +1,870 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Support Rana: Keep Free Bots, Website &amp; Tools Running</title>
+    <meta name="description" content="I build free Telegram bots and websites. Servers cost money every month. Your donation keeps them alive.">
+    <link rel="canonical" href="https://donate.rana49.online/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Support Rana: Keep Free Bots, Website &amp; Tools Running">
+    <meta property="og:description" content="I build free Telegram bots and websites. Servers cost money every month. Your donation keeps them alive.">
+    <meta property="og:url" content="https://donate.rana49.online/">
+    <meta name="theme-color" content="#0EA5E9">
+    <link rel="icon"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E💙%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Figtree:wght@400;600&display=swap"
+        rel="stylesheet">
+    <style>:root {
+  --ink: #0B2A4A;
+  --muted: #4A6580;
+  --sky: #0EA5E9;
+  --sky-d: #0284C7;
+  --sky-soft: #E6F5FF;
+  --line: #BFE3F8;
+  --white: #fff;
+  --coral: #FF7A8A;
+  --sun: #FFC83D;
+  --mint: #2DD4A8;
+  --violet: #8B7CF6;
+  --r: 18px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0
+}
+
+html {
+  scroll-behavior: smooth
+}
+
+body {
+  font: 400 1.05rem/1.65 Figtree, system-ui, sans-serif;
+  color: var(--ink);
+  background: var(--white);
+  -webkit-font-smoothing: antialiased
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Bricolage Grotesque", Figtree, sans-serif;
+  line-height: 1.12;
+  letter-spacing: -.01em
+}
+
+h1 {
+  font-size: clamp(2.1rem, 5.4vw, 3.6rem);
+  font-weight: 800
+}
+
+h2 {
+  font-size: clamp(1.6rem, 3.6vw, 2.3rem);
+  font-weight: 800;
+  margin-bottom: .4rem
+}
+
+h3 {
+  font-size: 1.2rem;
+  font-weight: 600
+}
+
+p {
+  max-width: 62ch
+}
+
+a {
+  color: inherit
+}
+
+.wrap {
+  width: min(1080px, 100% - 2.5rem);
+  margin-inline: auto
+}
+
+.narrow {
+  width: min(720px, 100% - 2.5rem)
+}
+
+.section {
+  padding: clamp(3rem, 7vw, 5.5rem) 0;
+  scroll-margin-top: 1rem
+}
+
+.soft {
+  background: var(--sky-soft)
+}
+
+.sub {
+  color: var(--muted);
+  margin-bottom: 2rem
+}
+
+.btn {
+  display: inline-block;
+  padding: .85rem 1.5rem;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  border: 2px solid transparent;
+  transition: transform .15s, box-shadow .2s, background .2s;
+  cursor: pointer;
+  text-align: center
+}
+
+.btn-primary {
+  background: var(--sky);
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(14, 165, 233, .35)
+}
+
+.btn-primary:hover {
+  background: var(--sky-d);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(14, 165, 233, .4)
+}
+
+.btn-ghost {
+  background: #fff;
+  border-color: var(--line);
+  color: var(--sky-d)
+}
+
+.btn-ghost:hover {
+  border-color: var(--sky);
+  transform: translateY(-2px)
+}
+
+.btn:active {
+  transform: translateY(0)
+}
+
+.full {
+  display: block;
+  width: 100%
+}
+
+:focus-visible {
+  outline: 3px solid var(--violet);
+  outline-offset: 3px
+}
+
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 1.5rem;
+  transform: translate(-50%, 150%);
+  background: var(--ink);
+  color: #fff;
+  padding: .7rem 1.2rem;
+  border-radius: 999px;
+  font-weight: 600;
+  transition: transform .3s;
+  z-index: 10
+}
+
+.toast.show {
+  transform: translate(-50%, 0)
+}
+
+@media (prefers-reduced-motion:reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important
+  }
+}
+.hero {
+    position: relative;
+    overflow: hidden;
+    padding: clamp(2.5rem, 7vw, 5rem) 0 clamp(3rem, 7vw, 5rem);
+    background: linear-gradient(180deg, var(--sky-soft), #fff 85%)
+}
+
+.blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(50px);
+    opacity: .55;
+    animation: drift 14s ease-in-out infinite alternate
+}
+
+.b1 {
+    width: 320px;
+    height: 320px;
+    background: var(--sky);
+    top: -90px;
+    left: -80px
+}
+
+.b2 {
+    width: 260px;
+    height: 260px;
+    background: var(--sun);
+    right: -60px;
+    top: 20%;
+    animation-delay: -5s
+}
+
+.b3 {
+    width: 240px;
+    height: 240px;
+    background: var(--coral);
+    left: 35%;
+    bottom: -120px;
+    animation-delay: -9s
+}
+
+@keyframes drift {
+    to {
+        transform: translate(40px, 30px) scale(1.12)
+    }
+}
+
+.hero-grid {
+    position: relative;
+    display: grid;
+    gap: 3rem;
+    align-items: center
+}
+
+@media(min-width:880px) {
+    .hero-grid {
+        grid-template-columns: 1.25fr 1fr
+    }
+}
+
+.hello {
+    font-weight: 600;
+    color: var(--sky-d);
+    margin-bottom: .8rem
+}
+
+.lead {
+    font-size: 1.15rem;
+    color: var(--muted);
+    margin: 1.1rem 0 1.6rem
+}
+
+.cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .8rem
+}
+
+.note {
+    margin-top: 1.2rem;
+    font-size: .95rem;
+    color: var(--muted)
+}
+
+.hero-text>* {
+    animation: rise .7s cubic-bezier(.2, .7, .2, 1) both
+}
+
+.hero-text>:nth-child(2) {
+    animation-delay: .1s
+}
+
+.hero-text>:nth-child(3) {
+    animation-delay: .2s
+}
+
+.hero-text>:nth-child(4) {
+    animation-delay: .3s
+}
+
+.hero-text>:nth-child(5) {
+    animation-delay: .4s
+}
+
+@keyframes rise {
+    from {
+        opacity: 0;
+        transform: translateY(22px)
+    }
+}
+
+.orbit {
+    position: relative;
+    width: min(340px, 80vw);
+    aspect-ratio: 1;
+    margin-inline: auto
+}
+
+.ring {
+    position: absolute;
+    inset: 0;
+    border: 2px dashed var(--line);
+    border-radius: 50%;
+    animation: spin 26s linear infinite
+}
+
+.chip {
+    position: absolute;
+    padding: .45rem .9rem;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: .95rem;
+    color: #fff;
+    white-space: nowrap;
+    animation: spin-back 26s linear infinite;
+    box-shadow: 0 6px 14px rgba(11, 42, 74, .15)
+}
+
+.c1 {
+    top: -1rem;
+    left: 50%;
+    margin-left: -3rem;
+    background: var(--sky)
+}
+
+.c2 {
+    bottom: 12%;
+    left: -1.8rem;
+    background: var(--coral)
+}
+
+.c3 {
+    bottom: 12%;
+    right: -1.8rem;
+    background: var(--violet)
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg)
+    }
+}
+
+@keyframes spin-back {
+    to {
+        transform: rotate(-360deg)
+    }
+}
+
+.avatar {
+    position: absolute;
+    inset: 18%;
+    border-radius: 50%;
+    background: #fff;
+    border: 6px solid #fff;
+    box-shadow: 0 0 0 4px var(--sun), 0 16px 40px rgba(14, 165, 233, .3);
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    text-align: center;
+    color: var(--muted);
+    font-weight: 600;
+    line-height: 1.3
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover
+}
+.cards {
+    display: grid;
+    gap: 1.2rem;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr))
+}
+
+.card {
+    display: block;
+    text-decoration: none;
+    background: #fff;
+    border: 2px solid var(--line);
+    border-radius: var(--r);
+    padding: 1.5rem;
+    transition: transform .2s, border-color .2s, box-shadow .2s
+}
+
+a.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 30px rgba(14, 165, 233, .18)
+}
+
+.card .ico {
+    display: grid;
+    place-items: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 14px;
+    font-size: 1.5rem;
+    margin-bottom: .9rem
+}
+
+.card p {
+    color: var(--muted);
+    margin-top: .3rem
+}
+
+.c0 .ico {
+    background: #D8F1FF
+}
+
+.c1 .ico {
+    background: #FFE3E7
+}
+
+.c2 .ico {
+    background: #FFF1C4
+}
+
+.c3 .ico {
+    background: #D7F7EC
+}
+
+.narrow p+p {
+    margin-top: 1rem
+}
+
+.about {
+    display: grid;
+    gap: 2rem;
+    align-items: center
+}
+
+@media(min-width:760px) {
+    .about {
+        grid-template-columns: 220px 1fr
+    }
+}
+
+.about-photo {
+    width: 200px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: #fff;
+    border: 4px solid var(--sky);
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    text-align: center;
+    color: var(--muted);
+    font-weight: 600;
+    margin-inline: auto
+}
+
+.about-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover
+}
+
+.about p {
+    margin-top: .6rem
+}
+
+.plain {
+    color: var(--sky-d);
+    font-weight: 600
+}
+
+.socials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .6rem;
+    margin-top: 1.3rem
+}
+
+.soc {
+    padding: .55rem 1.1rem;
+    border-radius: 999px;
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform .15s, filter .2s
+}
+
+.soc:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.08)
+}
+
+.s-fb {
+    background: #1877F2
+}
+
+.s-yt {
+    background: #E53935
+}
+
+.s-wa {
+    background: #1FAF5A
+}
+
+.s-tg {
+    background: #229ED9
+}
+
+.s-em {
+    background: var(--violet)
+}
+
+.footer {
+    padding: 2rem 1.25rem;
+    text-align: center;
+    color: var(--muted);
+    background: #fff;
+    border-top: 1px solid var(--line)
+}
+
+.footer p {
+    margin-inline: auto
+}
+.pay-grid {
+    display: grid;
+    gap: 1.3rem;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr))
+}
+
+.pay {
+    background: #fff;
+    border: 2px solid var(--line);
+    border-top: 6px solid var(--sky);
+    border-radius: var(--r);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: .8rem
+}
+
+.p-bank {
+    border-top-color: var(--mint)
+}
+
+.p-rzp {
+    border-top-color: var(--violet)
+}
+
+.p-pp {
+    border-top-color: var(--sun)
+}
+
+.pay>p {
+    color: var(--muted)
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    background: var(--sky-soft);
+    border-radius: 12px;
+    padding: .55rem .6rem .55rem .9rem
+}
+
+.k {
+    font-size: .85rem;
+    color: var(--muted);
+    min-width: 6.2rem
+}
+
+.v {
+    flex: 1;
+    font-weight: 600;
+    word-break: break-all
+}
+
+.copy {
+    border: 0;
+    background: var(--sky);
+    color: #fff;
+    font: 600 .85rem Figtree, sans-serif;
+    padding: .4rem .85rem;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: transform .15s, background .2s
+}
+
+.copy:hover {
+    background: var(--sky-d);
+    transform: scale(1.06)
+}
+
+.copy.done {
+    background: var(--mint);
+    animation: pop .35s
+}
+
+@keyframes pop {
+    50% {
+        transform: scale(1.18)
+    }
+}
+
+.hint {
+    font-size: .88rem;
+    color: var(--muted)
+}
+
+.qr {
+    width: 170px;
+    aspect-ratio: 1;
+    margin: .3rem auto 0;
+    border: 2px dashed var(--line);
+    border-radius: 14px;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    color: var(--muted);
+    font-size: .9rem;
+    overflow: hidden
+}
+
+.qr img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain
+}
+
+.fine {
+    margin-top: 1.5rem;
+    font-size: .9rem;
+    color: var(--muted)
+}
+
+.goal {
+    margin-top: 2rem;
+    background: #fff;
+    border: 2px solid var(--line);
+    border-radius: var(--r);
+    padding: 1.2rem
+}
+
+.goal-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: .6rem
+}
+
+.bar {
+    height: 14px;
+    border-radius: 999px;
+    background: var(--sky-soft);
+    overflow: hidden
+}
+
+.bar span {
+    display: block;
+    height: 100%;
+    width: var(--w);
+    border-radius: inherit;
+    background: linear-gradient(90deg, var(--sky), var(--mint), var(--sun));
+    animation: fill 1.4s cubic-bezier(.2, .7, .2, 1) both
+}
+
+@keyframes fill {
+    from {
+        width: 0
+    }
+}
+
+</style>
+</head>
+
+<body>
+    
+<header class="hero">
+  <span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span>
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <p class="hello">Hi, I'm Rana 👋</p>
+      <h1>Free bots and tools still need servers that cost money.</h1>
+      <p class="lead">I build Telegram bots and websites that anyone can use for free. The servers behind them are a
+        real monthly cost, and I can't carry it alone.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="#donate">Support with a donation</a>
+        <a class="btn btn-ghost" href="#free">See what's free</a>
+      </div>
+      <p class="note">Donating is always your choice. Without support, though, I can't promise these tools will keep
+        running.</p>
+    </div>
+    <div class="orbit" aria-hidden="true">
+      <div class="ring">
+        <span class="chip c1">🤖 Bots</span>
+        <span class="chip c2">🌐 Websites</span>
+        <span class="chip c3">🖥️ Servers</span>
+      </div>
+      <div class="avatar">
+        
+        <img src="static/image/me.png" alt="Rana's profile photo">
+        
+      </div>
+    </div>
+  </div>
+</header>
+<main>
+    <section class="section" id="free">
+  <div class="wrap">
+    <h2>What I give away for free</h2>
+    <p class="sub">Built and hosted by me, open to everyone.</p>
+    <div class="cards">
+      
+      <div class="card c0">
+        <span class="ico">🤖</span>
+        <h3>Telegram bots</h3>
+        <p>Useful Automation Bots that save you time. Free to use.</p>
+      </div>
+      
+      <a class="card c1" href="https://sunoaisongdownload.online" target="_blank" rel="noopener">
+        <span class="ico">🎵</span>
+        <h3>Suno AI Song Download</h3>
+        <p>Download your Suno songs from a simple website or Bot.</p>
+      </a>
+      
+      <div class="card c2">
+        <span class="ico">🌐</span>
+        <h3>Web tools</h3>
+        <p>Small websites that solve different problem as well as Hosting.</p>
+      </div>
+      
+    </div>
+  </div>
+</section>
+    <section class="section soft" id="why">
+  <div class="wrap narrow">
+    <h2>Why I'm asking for help</h2>
+    <p>Every bot and website runs on a server that I pay for each month, along with domains and the time to keep everything working. As more people use them, the bill grows.</p>
+    <p>I don't want to lock anything behind a paywall. Your donation lets me keep these tools free, or priced lower than most alternatives. A small amount helps, and so does sharing this page.</p>
+    
+  </div>
+</section>
+    
+<section class="section" id="donate">
+  <div class="wrap">
+    <h2>Donate in the way that suits you</h2>
+    <p class="sub">Any amount is welcome. Thank you for caring about free tools.</p>
+    <div class="pay-grid">
+
+      <article class="pay p-upi">
+        <h3>UPI (India)</h3>
+        <p>Pay from any UPI app with zero fees.</p>
+        <div class="row"><span class="k">UPI ID</span><span class="v">RanaUniverse@upi</span>
+  <button class="copy" type="button" data-copy="RanaUniverse@upi" data-label="UPI ID"
+    aria-label="Copy UPI ID">Copy</button>
+</div>
+        <a class="btn btn-primary full" href="upi://pay?pa=RanaUniverse%40upi&amp;pn=Manik%20Kumar%20Rana&amp;cu=INR">Open my UPI app</a>
+        <p class="hint">The button works on phones. On a computer, scan the QR code or copy the UPI ID.</p>
+        <div class="qr">
+          <div class="qr">
+            
+            <img src="static/image/upi_qr.jpg" alt="UPI payment QR code">
+            
+          </div>
+        </div>
+      </article>
+
+      <article class="pay p-rzp">
+        <h3>Razorpay</h3>
+        <p>Pay by card, net banking, wallet or UPI on Razorpay's secure page.</p>
+        <a class="btn btn-primary full" href="https://razorpay.me/@RanaUniverse" target="_blank" rel="noopener">Donate with
+          Razorpay</a>
+      </article>
+
+      <article class="pay p-bank">
+        <h3>Bank transfer (India)</h3>
+        <p>Send directly with NEFT, IMPS or RTGS.</p>
+        <div class="row"><span class="k">Account holder</span><span class="v">Manik Kumar Rana</span>
+  <button class="copy" type="button" data-copy="Manik Kumar Rana" data-label="Account holder"
+    aria-label="Copy Account holder">Copy</button>
+</div><div class="row"><span class="k">Bank</span><span class="v">Jio Payments Bank</span>
+  <button class="copy" type="button" data-copy="Jio Payments Bank" data-label="Bank"
+    aria-label="Copy Bank">Copy</button>
+</div><div class="row"><span class="k">Account number</span><span class="v">003520391382509</span>
+  <button class="copy" type="button" data-copy="003520391382509" data-label="Account number"
+    aria-label="Copy Account number">Copy</button>
+</div><div class="row"><span class="k">IFSC</span><span class="v">JIOP0000001</span>
+  <button class="copy" type="button" data-copy="JIOP0000001" data-label="IFSC"
+    aria-label="Copy IFSC">Copy</button>
+</div><div class="row"><span class="k">Branch</span><span class="v">Jio Payments Bank IMPS / RTGS HO</span>
+  <button class="copy" type="button" data-copy="Jio Payments Bank IMPS / RTGS HO" data-label="Branch"
+    aria-label="Copy Branch">Copy</button>
+</div>
+      </article>
+
+
+      <article class="pay p-pp">
+        <h3>PayPal (outside India)</h3>
+        <p>Donate in your own currency from anywhere.</p>
+        <a class="btn btn-primary full" href="https://paypal.me/RanaUniverse321" target="_blank" rel="noopener">Donate with PayPal</a>
+      </article>
+
+    </div>
+    <p class="fine">Please check the account name in your payment app before you confirm. Donations are voluntary gifts,
+      so refunds usually aren't possible.</p>
+  </div>
+</section>
+    <section class="section soft" id="about">
+  <div class="wrap about">
+    <div class="about-photo">
+      
+      <img src="static/image/me.png" alt="About Rana">
+      
+    </div>
+    <div>
+      <h2>About me</h2>
+      <p>I&#39;m Rana, a self-taught developer from India. I build Telegram bots and websites and put them online for anyone to use. </p>
+      <p><a class="plain" href="https://rana49.online" target="_blank" rel="noopener">See my portfolio</a></p>
+      <div class="socials">
+        <a class="soc s-tg" href="https://t.me/RanaUniverse" target="_blank" rel="noopener">Telegram</a>
+        <a class="soc s-fb" href="https://www.facebook.com/RanaUniverse" target="_blank" rel="noopener">Facebook</a>
+        <a class="soc s-yt" href="https://www.youtube.com/@RanaUniverse" target="_blank" rel="noopener">YouTube</a>
+        <a class="soc s-wa" href="https://wa.me/917044394156" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="soc s-em" href="mailto:RanaUniverse321+donate@gmail.com">Email</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="footer">
+  <p>Made with 💙 by Rana (RanaUniverse). Thank you for every bit of support.</p>
+</footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script>const toast = document.getElementById("toast");
+let toastTimer;
+function showToast(msg) {
+  toast.textContent = msg;
+  toast.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toast.classList.remove("show"), 1800);
+}
+async function copyText(text) {
+  try {
+    await navigator.clipboard.writeText(text);
+  } catch (e) {
+    const t = document.createElement("textarea");
+    t.value = text;
+    document.body.appendChild(t);
+    t.select();
+    document.execCommand("copy");
+    t.remove();
+  }
+}
+
+document.querySelectorAll("[data-copy]").forEach((btn) => {
+  btn.addEventListener("click", async () => {
+    await copyText(btn.dataset.copy);
+    btn.classList.add("done");
+    btn.textContent = "Copied";
+    showToast(btn.dataset.label + " copied");
+    setTimeout(() => { btn.classList.remove("done"); btn.textContent = "Copy"; }, 1800);
+  });
+});
+</script>
+</body>
+
+</html>

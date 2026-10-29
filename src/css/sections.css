@@ -1,0 +1,150 @@
+.cards {
+    display: grid;
+    gap: 1.2rem;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr))
+}
+
+.card {
+    display: block;
+    text-decoration: none;
+    background: #fff;
+    border: 2px solid var(--line);
+    border-radius: var(--r);
+    padding: 1.5rem;
+    transition: transform .2s, border-color .2s, box-shadow .2s
+}
+
+a.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 30px rgba(14, 165, 233, .18)
+}
+
+.card .ico {
+    display: grid;
+    place-items: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 14px;
+    font-size: 1.5rem;
+    margin-bottom: .9rem
+}
+
+.card p {
+    color: var(--muted);
+    margin-top: .3rem
+}
+
+.c0 .ico {
+    background: #D8F1FF
+}
+
+.c1 .ico {
+    background: #FFE3E7
+}
+
+.c2 .ico {
+    background: #FFF1C4
+}
+
+.c3 .ico {
+    background: #D7F7EC
+}
+
+.narrow p+p {
+    margin-top: 1rem
+}
+
+.about {
+    display: grid;
+    gap: 2rem;
+    align-items: center
+}
+
+@media(min-width:760px) {
+    .about {
+        grid-template-columns: 220px 1fr
+    }
+}
+
+.about-photo {
+    width: 200px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: #fff;
+    border: 4px solid var(--sky);
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    text-align: center;
+    color: var(--muted);
+    font-weight: 600;
+    margin-inline: auto
+}
+
+.about-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover
+}
+
+.about p {
+    margin-top: .6rem
+}
+
+.plain {
+    color: var(--sky-d);
+    font-weight: 600
+}
+
+.socials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .6rem;
+    margin-top: 1.3rem
+}
+
+.soc {
+    padding: .55rem 1.1rem;
+    border-radius: 999px;
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform .15s, filter .2s
+}
+
+.soc:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.08)
+}
+
+.s-fb {
+    background: #1877F2
+}
+
+.s-yt {
+    background: #E53935
+}
+
+.s-wa {
+    background: #1FAF5A
+}
+
+.s-tg {
+    background: #229ED9
+}
+
+.s-em {
+    background: var(--violet)
+}
+
+.footer {
+    padding: 2rem 1.25rem;
+    text-align: center;
+    color: var(--muted);
+    background: #fff;
+    border-top: 1px solid var(--line)
+}
+
+.footer p {
+    margin-inline: auto
+}

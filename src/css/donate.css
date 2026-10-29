@@ -1,0 +1,150 @@
+.pay-grid {
+    display: grid;
+    gap: 1.3rem;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr))
+}
+
+.pay {
+    background: #fff;
+    border: 2px solid var(--line);
+    border-top: 6px solid var(--sky);
+    border-radius: var(--r);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: .8rem
+}
+
+.p-bank {
+    border-top-color: var(--mint)
+}
+
+.p-rzp {
+    border-top-color: var(--violet)
+}
+
+.p-pp {
+    border-top-color: var(--sun)
+}
+
+.pay>p {
+    color: var(--muted)
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    background: var(--sky-soft);
+    border-radius: 12px;
+    padding: .55rem .6rem .55rem .9rem
+}
+
+.k {
+    font-size: .85rem;
+    color: var(--muted);
+    min-width: 6.2rem
+}
+
+.v {
+    flex: 1;
+    font-weight: 600;
+    word-break: break-all
+}
+
+.copy {
+    border: 0;
+    background: var(--sky);
+    color: #fff;
+    font: 600 .85rem Figtree, sans-serif;
+    padding: .4rem .85rem;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: transform .15s, background .2s
+}
+
+.copy:hover {
+    background: var(--sky-d);
+    transform: scale(1.06)
+}
+
+.copy.done {
+    background: var(--mint);
+    animation: pop .35s
+}
+
+@keyframes pop {
+    50% {
+        transform: scale(1.18)
+    }
+}
+
+.hint {
+    font-size: .88rem;
+    color: var(--muted)
+}
+
+.qr {
+    width: 170px;
+    aspect-ratio: 1;
+    margin: .3rem auto 0;
+    border: 2px dashed var(--line);
+    border-radius: 14px;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    color: var(--muted);
+    font-size: .9rem;
+    overflow: hidden
+}
+
+.qr img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain
+}
+
+.fine {
+    margin-top: 1.5rem;
+    font-size: .9rem;
+    color: var(--muted)
+}
+
+.goal {
+    margin-top: 2rem;
+    background: #fff;
+    border: 2px solid var(--line);
+    border-radius: var(--r);
+    padding: 1.2rem
+}
+
+.goal-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: .6rem
+}
+
+.bar {
+    height: 14px;
+    border-radius: 999px;
+    background: var(--sky-soft);
+    overflow: hidden
+}
+
+.bar span {
+    display: block;
+    height: 100%;
+    width: var(--w);
+    border-radius: inherit;
+    background: linear-gradient(90deg, var(--sky), var(--mint), var(--sun));
+    animation: fill 1.4s cubic-bezier(.2, .7, .2, 1) both
+}
+
+@keyframes fill {
+    from {
+        width: 0
+    }
+}
+

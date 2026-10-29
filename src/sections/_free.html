@@ -1,0 +1,15 @@
+<section class="section" id="free">
+  <div class="wrap">
+    <h2>What I give away for free</h2>
+    <p class="sub">Built and hosted by me, open to everyone.</p>
+    <div class="cards">
+      {% for p in projects %}
+      <{{ 'a' if p.url else 'div' }} class="card c{{ loop.index0 % 4 }}"{% if p.url %} href="{{ p.url }}" target="_blank" rel="noopener"{% endif %}>
+        <span class="ico">{{ p.icon }}</span>
+        <h3>{{ p.title }}</h3>
+        <p>{{ p.text }}</p>
+      </{{ 'a' if p.url else 'div' }}>
+      {% endfor %}
+    </div>
+  </div>
+</section>
