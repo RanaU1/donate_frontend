@@ -142,6 +142,7 @@ PROJECTS = [
         "🤖",
         "Telegram bots",
         "Useful Automation Bots that save you time. Free to use.",
+        url="https://t.me/SunoAiSongDownloadBot",
     ),
     Project(
         "🎵",
@@ -152,7 +153,8 @@ PROJECTS = [
     Project(
         "🌐",
         "Web tools",
-        "Small websites that solve different problem as well as Hosting.",
+        "Let's Learn Python Backend Technologies.",
+        url="https://rana49.online",
     ),
 ]
 

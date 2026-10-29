@@ -34,17 +34,16 @@
           Razorpay</a>
       </article>
 
-      <article class="pay p-bank">
-        <h3>Bank transfer (India)</h3>
-        <p>Send directly with NEFT, IMPS or RTGS.</p>
-        {% for k, v in bank.rows() %}{{ row(k, v) }}{% endfor %}
-      </article>
-
-
       <article class="pay p-pp">
         <h3>PayPal (outside India)</h3>
         <p>Donate in your own currency from anywhere.</p>
         <a class="btn btn-primary full" href="{{ links.paypal }}" target="_blank" rel="noopener">Donate with PayPal</a>
+      </article>
+
+      <article class="pay p-bank">
+        <h3>Bank transfer (India)</h3>
+        <p>Send directly with NEFT, IMPS or RTGS.</p>
+        {% for k, v in bank.rows() %}{{ row(k, v) }}{% endfor %}
       </article>
 
     </div>
